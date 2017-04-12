@@ -32,11 +32,7 @@ export class RacesComponent implements OnInit {
     }
     return sum;
   }
-
-  castDate(date) {
-    return new Date(date);
-  }
-
+  
   cashLeft() {
     return this.cash - this.totalCost();
   }
