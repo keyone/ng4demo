@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
     <header class="container">
       <h1>{{heading}}</h1>
     </header>
-    <races-component-app></races-component-app>
+    <router-outlet></router-outlet>
     `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ultra Racing Schedule';
+  heading = 'Ultra Racing Schedule';
 }
