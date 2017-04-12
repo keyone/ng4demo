@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+
 import { Race } from './race';
 import { RaceService } from './race.service';
 
 @Component({
-  selector: 'my-races',
+  selector: 'races-component-app',
   templateUrl: './races.component.html',
-  styleUrls:['./races.component.css']
+  styleUrls: ['./races.component.css']
 })
-export class RacesComponent {
-  heading = "Ultra Racing Schedule"
+export class RacesComponent implements OnInit {
+  heading = 'Ultra Racing Schedule';
   cash = 10000;
   races: Race[];
 
@@ -22,8 +24,10 @@ export class RacesComponent {
   totalCost() {
     let sum = 0;
     if (this.races) {
-      for (let race of this.races) {
-        if (race.isRacing) sum += race.entryFee;
+      for (const race of this.races) {
+        if (race.isRacing) {
+          sum += race.entryFee;
+        }
       }
     }
     return sum;
@@ -41,7 +45,7 @@ export class RacesComponent {
     if (this.cashLeft() > race.entryFee) {
       race.isRacing = true;
     } else {
-      alert("You don't have enough cash");
+      alert('You don\'t have enough cash');
     }
   }
 

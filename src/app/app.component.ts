@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'racing-app',
+  selector: 'app-racing',
   template: `
-<header class="container">
-  <h1>{{heading}}</h1>
-</header>
-<my-races></my-races>
-`,
+    <header class="container">
+      <h1>{{heading}}</h1>
+    </header>
+    <races-component-app></races-component-app>
+    `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
